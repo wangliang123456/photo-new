@@ -23,7 +23,7 @@ public class PhotoSpecController {
     private PhotoSpecService photoSpecService;
 
 
-    @GetMapping("/")
+    @GetMapping("/query")
     public PhotoSpecPO queryPhotoSpec(@RequestParam int photoSpecId) {
         return photoSpecService.queryPhotoSpecById(photoSpecId);
     }
