@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * @author wangliang
  */
-public class PhotoSpec {
+public class PhotoSpecPO {
 
     private long id;
 
