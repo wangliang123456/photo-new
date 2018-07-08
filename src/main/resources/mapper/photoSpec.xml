@@ -61,7 +61,7 @@
     
     <select id="queryAllRecord" resultMap="result">
       SELECT
-      ${selectAll}
+      <include refid="selectAll"/>
       FROM
       photo_spec
     </select>

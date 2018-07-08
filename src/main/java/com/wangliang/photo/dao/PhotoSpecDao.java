@@ -38,7 +38,7 @@ public interface PhotoSpecDao {
     int deletePhotoSpec(@Param("photoSpecId") int photoSpecId);
 
     /**
-     * 查询所有记录
+     * 查询所有
      *
      * @return
      */
