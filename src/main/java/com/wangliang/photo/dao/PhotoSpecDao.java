@@ -4,6 +4,9 @@ import com.wangliang.photo.model.po.PhotoSpecPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+/**
+ * @author wangliang
+ */
 @Mapper
 public interface PhotoSpecDao {
 
@@ -15,4 +18,6 @@ public interface PhotoSpecDao {
      */
     @Select("select * from photo_spec where id = #{photoSpecId}")
     PhotoSpecPO queryPhotoSpecById(int photoSpecId);
+
+
 }
