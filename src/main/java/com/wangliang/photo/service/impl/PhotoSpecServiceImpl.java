@@ -1,21 +1,22 @@
 package com.wangliang.photo.service.impl;
 
-import com.google.common.collect.Lists;
-import com.wangliang.photo.dao.PhotoSpecDao;
-import com.wangliang.photo.model.po.PhotoSpecPO;
-import com.wangliang.photo.model.vo.PhotoSpecVO;
-import com.wangliang.photo.service.PhotoSpecService;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
+import javax.annotation.Resource;
+
 import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
+import com.google.common.collect.Lists;
+import com.wangliang.photo.dao.PhotoSpecDao;
+import com.wangliang.photo.model.po.PhotoSpecPO;
+import com.wangliang.photo.model.vo.PhotoSpecVO;
+import com.wangliang.photo.service.PhotoSpecService;
 
 /**
  * @author wangliang
