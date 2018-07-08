@@ -29,11 +29,13 @@ public class PhotoSpecController {
 
     @GetMapping("/query")
     public PhotoSpecVO queryPhotoSpec(@RequestParam int photoSpecId) {
+        LOGGER.info("查询参数为{}",photoSpecId);
         return photoSpecService.queryPhotoSpecById(photoSpecId);
     }
 
-    @GetMapping("/query/type")
+    @GetMapping("/type")
     public List<PhotoSpecVO> queryByType(@RequestParam int type) {
+        LOGGER.info("查询参数为{}",type);
         return photoSpecService.queryByType(type);
     }
 }
