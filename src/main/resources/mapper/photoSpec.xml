@@ -37,33 +37,35 @@
 
     <update id="updatePhotoSpec">
       UPDATE
-      photo_spec
+        photo_spec
       SET
-      ${updateAll}
+        ${updateAll}
     </update>
 
     <select id="queryPhotoSpecById" resultMap="result">
         SELECT
-        ${selectAll}
+          <include refid="selectAll"/>
         FROM
-        photo_spec
+          photo_spec
         WHERE
-        id = #{photoSpecId}
+          id = #{photoSpecId}
     </select>
 
     <delete id="deletePhotoSpec">
         DELETE
         FROM
-        photo_spec
-        where
-        id = #{photoSpecId}
+          photo_spec
+        WHERE
+          id = #{photoSpecId}
     </delete>
     
     <select id="queryAllRecord" resultMap="result">
       SELECT
-      <include refid="selectAll"/>
+        <include refid="selectAll"/>
       FROM
-      photo_spec
+        photo_spec
+      WHERE
+        type = #{type}
     </select>
 
 </mapper>

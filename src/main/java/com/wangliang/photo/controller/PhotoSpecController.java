@@ -1,6 +1,7 @@
 package com.wangliang.photo.controller;
 
 import com.wangliang.photo.model.po.PhotoSpecPO;
+import com.wangliang.photo.model.vo.PhotoSpecVO;
 import com.wangliang.photo.service.PhotoSpecService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author wangliang
@@ -26,7 +28,12 @@ public class PhotoSpecController {
 
 
     @GetMapping("/query")
-    public PhotoSpecPO queryPhotoSpec(@RequestParam int photoSpecId) {
+    public PhotoSpecVO queryPhotoSpec(@RequestParam int photoSpecId) {
         return photoSpecService.queryPhotoSpecById(photoSpecId);
+    }
+
+    @GetMapping("/query/type")
+    public List<PhotoSpecVO> queryByType(@RequestParam int type) {
+        return photoSpecService.queryByType(type);
     }
 }

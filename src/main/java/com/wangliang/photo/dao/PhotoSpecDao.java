@@ -40,7 +40,8 @@ public interface PhotoSpecDao {
     /**
      * 查询所有
      *
+     * @param type
      * @return
      */
-    List<PhotoSpecPO> queryAllRecord();
+    List<PhotoSpecPO> queryAllRecord(@Param("type") int type);
 }
