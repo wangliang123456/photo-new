@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangliang.photo.dao.PhotoSpecDao">
+    <sql id="selectAll">
+        id,
+        name,
+        color,
+        mm_size,
+        pixel_size,
+        dpi,
+        type,
+        create_time
+    </sql>
+
+    <sql id="updateAll">
+        id = #{obj.id},
+        name = #{obj.name},
+        color = #{obj.color},
+        mm_size = #{obj.mmSize},
+        pixel_size = #{obj.pixelSize},
+        dpi = #{obj.dpi},
+        type = #{obj.type},
+        create_time = now()
+    </sql>
+
+    <resultMap id="result" type="com.wangliang.photo.model.po.PhotoSpecPO">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="color" property="color"/>
+        <result column="mm_size" property="mmSize"/>
+        <result column="type" property="type"/>
+        <result column="pixel_size" property="pixelSize"/>
+        <result column="create_time" property="createTime"/>
+        <result column="dpi" property="dpi"/>
+    </resultMap>
+
+
+    <update id="updatePhotoSpec">
+      UPDATE
+      photo_spec
+      SET
+      ${updateAll}
+    </update>
+
+    <select id="queryPhotoSpecById" resultMap="result">
+        SELECT
+        ${selectAll}
+        FROM
+        photo_spec
+        WHERE
+        id = #{photoSpecId}
+    </select>
+
+    <delete id="deletePhotoSpec">
+        DELETE
+        FROM
+        photo_spec
+        where
+        id = #{photoSpecId}
+    </delete>
+    
+    <select id="queryAllRecord" resultMap="result">
+      SELECT
+      ${selectAll}
+      FROM
+      photo_spec
+    </select>
+
+</mapper>

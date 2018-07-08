@@ -1,10 +1,9 @@
 package com.wangliang.photo.dao;
 
 import com.wangliang.photo.model.po.PhotoSpecPO;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 /**
  * @author wangliang
@@ -18,8 +17,7 @@ public interface PhotoSpecDao {
      * @param photoSpecId
      * @return
      */
-    @Select("select * from photo_spec where id = #{photoSpecId}")
-    PhotoSpecPO queryPhotoSpecById(int photoSpecId);
+    PhotoSpecPO queryPhotoSpecById(@Param("photoSpecId") int photoSpecId);
 
 
     /**
@@ -28,8 +26,7 @@ public interface PhotoSpecDao {
      * @param photoSpecPO
      * @return
      */
-    @Update("update photo_spec set name = #{name}, color = #{color}, mm_size = #{mmSize}, pixel_size = #{pixelSize}, dpi = #{dpi}, type = #{type}, create_time = #{createTime}")
-    int updatePhotoSpec(PhotoSpecPO photoSpecPO);
+    int updatePhotoSpec(@Param("obj") PhotoSpecPO photoSpecPO);
 
 
     /**
@@ -38,6 +35,12 @@ public interface PhotoSpecDao {
      * @param photoSpecId
      * @return
      */
-    @Delete("delete from photo_spec where id = #{photoSpecId}")
-    int deletePhotoSpec(int photoSpecId);
+    int deletePhotoSpec(@Param("photoSpecId") int photoSpecId);
+
+    /**
+     * 查询所有记录
+     *
+     * @return
+     */
+    List<PhotoSpecPO> queryAllRecord();
 }
