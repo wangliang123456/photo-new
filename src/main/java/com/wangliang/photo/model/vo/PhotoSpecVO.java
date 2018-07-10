@@ -1,8 +1,11 @@
 package com.wangliang.photo.model.vo;
 
+/**
+ * @author wangliang
+ */
 public class PhotoSpecVO {
 
-    private long id;
+    private Long id;
 
     private String color;
 
@@ -12,7 +15,7 @@ public class PhotoSpecVO {
 
     private String pixelSize;
 
-    private int dpi;
+    private Integer dpi;
 
     private int type;
 
@@ -70,5 +73,18 @@ public class PhotoSpecVO {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "PhotoSpecVO{" +
+                "id=" + id +
+                ", color='" + color + '\'' +
+                ", name='" + name + '\'' +
+                ", mmSize='" + mmSize + '\'' +
+                ", pixelSize='" + pixelSize + '\'' +
+                ", dpi=" + dpi +
+                ", type=" + type +
+                '}';
     }
 }
