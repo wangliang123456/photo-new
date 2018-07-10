@@ -11,9 +11,9 @@ public class OrderPO {
 
     private Integer orderStatus;
 
-    private Integer pay_type;
+    private Integer payType;
 
-    private Double total_price;
+    private Double totalPrice;
 
     private String skuInfo;
 
@@ -35,22 +35,6 @@ public class OrderPO {
         this.orderStatus = orderStatus;
     }
 
-    public Integer getPay_type() {
-        return pay_type;
-    }
-
-    public void setPay_type(Integer pay_type) {
-        this.pay_type = pay_type;
-    }
-
-    public Double getTotal_price() {
-        return total_price;
-    }
-
-    public void setTotal_price(Double total_price) {
-        this.total_price = total_price;
-    }
-
     public String getSkuInfo() {
         return skuInfo;
     }
@@ -65,5 +49,21 @@ public class OrderPO {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public Integer getPayType() {
+        return payType;
+    }
+
+    public void setPayType(Integer payType) {
+        this.payType = payType;
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }
