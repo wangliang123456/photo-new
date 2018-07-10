@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangliang.photo.dao.OrderDao">
+    <sql id="selectAll">
+        order_id,
+        order_status,
+        pay_type,
+        total_price,
+        sku_info,
+        create_time
+    </sql>
+
+    <sql id="updateAll">
+        order_id = #{obj.orderId},
+        order_status = #{obj.orderStatus},
+        pay_type = #{obj.payType},
+        total_price = #{obj.totalPrice},
+        sku_info = #{obj.skuInfo},
+        create_time = now()
+    </sql>
+
+    <resultMap id="result" type="com.wangliang.photo.model.po.OrderPO">
+        <result column="order_id" property="orderId"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="pay_type" property="payType"/>
+        <result column="total_price" property="totalPrice"/>
+        <result column="sku_info" property="skuInfo"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+
+    <update id="updateOrder">
+      UPDATE
+        order
+      SET
+        ${updateAll}
+    </update>
+
+    <select id="queryOrderById" resultMap="result">
+        SELECT
+          <include refid="selectAll"/>
+        FROM
+          order
+        WHERE
+          id = #{orderId}
+    </select>
+
+    <delete id="deleteOrder">
+        DELETE
+        FROM
+          order
+        WHERE
+          id = #{orderId}
+    </delete>
+    
+    <insert id="createOrder" useGeneratedKeys="true">
+      INSERT INTO
+        order
+      SET
+        <include refid="updateAll"/>
+    </insert>
+</mapper>
