@@ -1,22 +1,23 @@
 package com.wangliang.photo.service.impl;
 
-import com.alibaba.fastjson.JSON;
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.google.common.collect.Lists;
-import com.wangliang.photo.dao.OrderDao;
-import com.wangliang.photo.model.OrderCreateRequest;
-import com.wangliang.photo.model.po.OrderPO;
-import com.wangliang.photo.model.vo.OrderVO;
-import com.wangliang.photo.service.OrderService;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.annotation.Resource;
+
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
+import com.wangliang.photo.dao.OrderDao;
+import com.wangliang.photo.model.OrderCreateRequest;
+import com.wangliang.photo.model.po.OrderPO;
+import com.wangliang.photo.model.vo.OrderVO;
+import com.wangliang.photo.service.OrderService;
 
 /**
  * @author wangliang
