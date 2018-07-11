@@ -59,4 +59,13 @@
       SET
         <include refid="updateAll"/>
     </insert>
+
+    <select id="queryAllUserOrder">
+        SELECT 
+          <include refid="selectAll"/>
+        FROM
+         order
+        WHERE
+          udid = #{udid}
+    </select>
 </mapper>

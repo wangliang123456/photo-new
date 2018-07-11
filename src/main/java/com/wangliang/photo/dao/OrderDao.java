@@ -4,6 +4,8 @@ import com.wangliang.photo.model.po.OrderPO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author wangliang
  */
@@ -35,4 +37,11 @@ public interface OrderDao {
      */
     OrderPO queryOrderById(@Param("orderId") int orderId);
 
+    /**
+     * 查询用户相关的订单
+     *
+     * @param udid
+     * @return
+     */
+    List<OrderPO> queryAllUserOrder(String udid);
 }
