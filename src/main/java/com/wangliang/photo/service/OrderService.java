@@ -1,5 +1,6 @@
 package com.wangliang.photo.service;
 
+import com.wangliang.photo.model.OrderCreateRequest;
 import com.wangliang.photo.model.vo.OrderVO;
 
 import java.util.List;
@@ -14,4 +15,12 @@ public interface OrderService {
      * @return
      */
     List<OrderVO> queryAllUserOrder(String udid);
+
+    /**
+     * 创建订单
+     *
+     * @param orderCreateRequest
+     * @return
+     */
+    OrderVO createOrder(OrderCreateRequest orderCreateRequest);
 }
