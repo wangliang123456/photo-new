@@ -1,5 +1,9 @@
 package com.wangliang.photo.model.constants;
 
+/**
+ * 常量定义
+ * @author wangliang
+ */
 public interface OrderConstants {
 
     interface OrderStatus {
