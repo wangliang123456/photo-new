@@ -1,0 +1,10 @@
+@startuml
+AppUser -> Webserver: Get https://xxx/orders bodyParam(uuid=123)
+Webserver --> OrderController: OrderVO
+OrderController --> OrderService: OrderVO
+OrderService --> OrderDao: OrderPO
+OrderDao --> OrderService: OrderPO
+OrderService --> OrderController: OrderVO
+OrderController --> Webserver: OrderVO
+AppUser <-- Webserver
+@enduml

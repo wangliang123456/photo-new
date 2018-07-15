@@ -2,42 +2,29 @@ package com.wangliang.photo.model.po;
 
 import java.util.Date;
 
-/**
- * @author wangliang
- */
 public class PhotoSpecPO {
-
-    private long id;
-
-    private String color;
+    private Integer id;
 
     private String name;
+
+    private String color;
 
     private String mmSize;
 
     private String pixelSize;
 
-    private int dpi;
+    private Integer dpi;
 
-    private int type;
+    private Integer type;
 
     private Date createTime;
 
-
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public String getName() {
@@ -45,7 +32,15 @@ public class PhotoSpecPO {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color == null ? null : color.trim();
     }
 
     public String getMmSize() {
@@ -53,7 +48,7 @@ public class PhotoSpecPO {
     }
 
     public void setMmSize(String mmSize) {
-        this.mmSize = mmSize;
+        this.mmSize = mmSize == null ? null : mmSize.trim();
     }
 
     public String getPixelSize() {
@@ -61,22 +56,22 @@ public class PhotoSpecPO {
     }
 
     public void setPixelSize(String pixelSize) {
-        this.pixelSize = pixelSize;
+        this.pixelSize = pixelSize == null ? null : pixelSize.trim();
     }
 
-    public int getDpi() {
+    public Integer getDpi() {
         return dpi;
     }
 
-    public void setDpi(int dpi) {
+    public void setDpi(Integer dpi) {
         this.dpi = dpi;
     }
 
-    public int getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 

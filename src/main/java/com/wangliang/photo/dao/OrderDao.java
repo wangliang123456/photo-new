@@ -43,5 +43,5 @@ public interface OrderDao {
      * @param udid
      * @return
      */
-    List<OrderPO> queryAllUserOrder(String udid);
+    List<OrderPO> queryAllUserOrders(String udid);
 }

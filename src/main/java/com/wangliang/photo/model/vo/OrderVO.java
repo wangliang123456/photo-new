@@ -7,11 +7,11 @@ import java.util.Date;
  */
 public class OrderVO {
 
-    private Long id;
+    private Long orderId;
 
-    private Integer orderStatus;
+    private Byte orderStatus;
 
-    private Integer payType;
+    private Byte payType;
 
     private Double totalPrice;
 
@@ -19,21 +19,17 @@ public class OrderVO {
 
     private Date createTime;
 
-    public Long getId() {
-        return id;
-    }
+    private Date deliveryTime;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private String udid;
 
-    public Integer getOrderStatus() {
-        return orderStatus;
-    }
+    private Byte deleted;
 
-    public void setOrderStatus(Integer orderStatus) {
-        this.orderStatus = orderStatus;
-    }
+    private Byte clientType;
+
+    private Byte needPost;
+
+    private byte[] image;
 
     public String getSkuInfo() {
         return skuInfo;
@@ -51,14 +47,6 @@ public class OrderVO {
         this.createTime = createTime;
     }
 
-    public Integer getPayType() {
-        return payType;
-    }
-
-    public void setPayType(Integer payType) {
-        this.payType = payType;
-    }
-
     public Double getTotalPrice() {
         return totalPrice;
     }
@@ -67,15 +55,75 @@ public class OrderVO {
         this.totalPrice = totalPrice;
     }
 
-    @Override
-    public String toString() {
-        return "OrderVO{" +
-                "id=" + id +
-                ", orderStatus=" + orderStatus +
-                ", payType=" + payType +
-                ", totalPrice=" + totalPrice +
-                ", skuInfo='" + skuInfo + '\'' +
-                ", createTime=" + createTime +
-                '}';
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public Byte getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(Byte orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public Byte getPayType() {
+        return payType;
+    }
+
+    public void setPayType(Byte payType) {
+        this.payType = payType;
+    }
+
+    public Date getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(Date deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public Byte getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Byte deleted) {
+        this.deleted = deleted;
+    }
+
+    public Byte getClientType() {
+        return clientType;
+    }
+
+    public void setClientType(Byte clientType) {
+        this.clientType = clientType;
+    }
+
+    public Byte getNeedPost() {
+        return needPost;
+    }
+
+    public void setNeedPost(Byte needPost) {
+        this.needPost = needPost;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public String getUdid() {
+        return udid;
+    }
+
+    public void setUdid(String udid) {
+        this.udid = udid;
     }
 }

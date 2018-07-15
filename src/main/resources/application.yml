@@ -6,7 +6,7 @@ spring:
         name: test
         url: jdbc:mysql://127.0.0.1:3306/photo
         username: root
-        password:
+        password: 12345678
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
         filters: stat

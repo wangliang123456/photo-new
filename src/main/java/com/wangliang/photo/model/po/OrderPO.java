@@ -2,16 +2,12 @@ package com.wangliang.photo.model.po;
 
 import java.util.Date;
 
-/**
- * @author wangliang
- */
 public class OrderPO {
+    private Long orderId;
 
-    private Long id;
+    private Byte orderStatus;
 
-    private Integer orderStatus;
-
-    private Integer payType;
+    private Byte payType;
 
     private Double totalPrice;
 
@@ -19,20 +15,48 @@ public class OrderPO {
 
     private Date createTime;
 
-    public Long getId() {
-        return id;
+    private Date deliveryTime;
+
+    private String udid;
+
+    private Byte deleted;
+
+    private Byte clientType;
+
+    private Byte needPost;
+
+    private byte[] image;
+
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
-    public Integer getOrderStatus() {
+    public Byte getOrderStatus() {
         return orderStatus;
     }
 
-    public void setOrderStatus(Integer orderStatus) {
+    public void setOrderStatus(Byte orderStatus) {
         this.orderStatus = orderStatus;
+    }
+
+    public Byte getPayType() {
+        return payType;
+    }
+
+    public void setPayType(Byte payType) {
+        this.payType = payType;
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public String getSkuInfo() {
@@ -40,7 +64,7 @@ public class OrderPO {
     }
 
     public void setSkuInfo(String skuInfo) {
-        this.skuInfo = skuInfo;
+        this.skuInfo = skuInfo == null ? null : skuInfo.trim();
     }
 
     public Date getCreateTime() {
@@ -51,19 +75,51 @@ public class OrderPO {
         this.createTime = createTime;
     }
 
-    public Integer getPayType() {
-        return payType;
+    public Date getDeliveryTime() {
+        return deliveryTime;
     }
 
-    public void setPayType(Integer payType) {
-        this.payType = payType;
+    public void setDeliveryTime(Date deliveryTime) {
+        this.deliveryTime = deliveryTime;
     }
 
-    public Double getTotalPrice() {
-        return totalPrice;
+    public String getUdid() {
+        return udid;
     }
 
-    public void setTotalPrice(Double totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setUdid(String udid) {
+        this.udid = udid == null ? null : udid.trim();
+    }
+
+    public Byte getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Byte deleted) {
+        this.deleted = deleted;
+    }
+
+    public Byte getClientType() {
+        return clientType;
+    }
+
+    public void setClientType(Byte clientType) {
+        this.clientType = clientType;
+    }
+
+    public Byte getNeedPost() {
+        return needPost;
+    }
+
+    public void setNeedPost(Byte needPost) {
+        this.needPost = needPost;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }

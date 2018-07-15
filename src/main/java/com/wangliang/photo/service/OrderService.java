@@ -14,7 +14,7 @@ public interface OrderService {
      * @param udid
      * @return
      */
-    List<OrderVO> queryAllUserOrder(String udid);
+    List<OrderVO> queryAllUserOrders(String udid);
 
     /**
      * 创建订单
@@ -23,4 +23,11 @@ public interface OrderService {
      * @return
      */
     OrderVO createOrder(OrderCreateRequest orderCreateRequest);
+
+    /**
+     *
+     * @param orderId
+     * @return
+     */
+    OrderVO queryOrderById(long orderId);
 }
